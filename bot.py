@@ -23,7 +23,6 @@ help.add_field(name="!kick", value="Kicks a User", inline=False)
 
 code = discord.Embed(title="Source Code:", description="https://github.com/Joshiy13/Ryllz", color=800080)
 
-
 dev = 841613559870914580
 
 
@@ -38,12 +37,14 @@ async def status_task():
         await client.change_presence(activity=discord.Game("https://discord.gg/PPjDtEYRnn"), status=discord.Status.online)
         await asyncio.sleep(10)
 
+
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
         await ctx.send('Please pass in all requirements :rolling_eyes:.')
     if isinstance(error, commands.MissingPermissions):
         await ctx.send("You dont have all the requirements :angry:")
+
 
 #The below code bans player.
 @client.command()
@@ -72,7 +73,7 @@ async def unban(ctx, *, member):
 @commands.has_permissions(kick_members = True)
 async def kick(ctx, member : discord.Member, *, reason = None):
     await member.kick(reason = reason)
-    
+
 
 @client.event
 async def on_message(message):
@@ -90,7 +91,6 @@ async def on_message(message):
         await message.channel.send(f"<@{dev}>" + " " + message.content[9:])
     if message.content.startswith("!code"):
         await message.channel.send(embed=code)
-
 
 
 client.run(token)
