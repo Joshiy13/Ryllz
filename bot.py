@@ -2,7 +2,7 @@ from tokenize import Token
 from turtle import color
 from unicodedata import name
 import discord
-from discord import guild, embeds, Embed
+from discord import guild, embeds
 import asyncio
 import os
 
