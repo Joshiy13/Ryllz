@@ -11,15 +11,16 @@ token = os.getenv("TOKEN")
 client = discord.Client()
 
 help = discord.Embed(title="Help-List of Ryllz-Bot", description="Here is a list of commands", color=800080)
-help.add_field(name="!help", value="Shows this page", inline=False)
-help.add_field(name="!dev", value="Shows the Developer of this Bot", inline=False)
-help.add_field(name="!ping", value="Shows the Latency of this Bot", inline=False)
-help.add_field(name="!avatar", value="Shows your Avatar", inline=False)
-help.add_field(name="!say", value="Sends a message trough the Bot", inline=False)
-help.add_field(name="!code", value="Shows the Source Code to this Bot", inline=False)
-help.add_field(name="!telldev", value="Pings the Dev of this Bot", inline=False)
-help.add_field(name="!ban", value="Bans a User", inline=False)
-help.add_field(name="!kick", value="Kicks a User", inline=False)
+help.add_field(name="!help", value="Shows this page", inline=True)
+help.add_field(name="!dev", value="Shows the Developer of this Bot", inline=True)
+help.add_field(name="!ping", value="Shows the Latency of this Bot", inline=True)
+help.add_field(name="!say", value="Sends a message trough the Bot", inline=True)
+help.add_field(name="!code", value="Shows the Source Code to this Bot", inline=True)
+help.add_field(name="!telldev", value="Pings the Dev of this Bot", inline=True)
+help.add_field(name="!ban", value="Bans a User", inline=True)
+help.add_field(name="!kick", value="Kicks a User", inline=True)
+help.add_field(name="!userinfo", value="Shows infos about a user", inline=True)
+help.add_field(name="!serverinfo", value="Shows infos about the Server", inline=True)
 
 
 code = discord.Embed(title="Source Code:", description="https://github.com/Joshiy13/Ryllz", color=800080)
@@ -48,8 +49,6 @@ async def on_message(message):
         await message.channel.send(embed=help)
     if message.content.startswith("!ping"):
         await message.channel.send(f"Pong! ({round(client.latency * 1000)}ms)")
-    if message.content.startswith("!avatar"):
-        await message.channel.send(f"{message.author.avatar_url}")
     if message.content.startswith("!say"):
         await message.channel.send(message.content[5:])
     if message.content.startswith("!telldev"):
@@ -73,11 +72,9 @@ async def on_message(message):
         userinfo = discord.Embed(title="", description=f"{user.name}#{user.discriminator}", color=800080)
         userinfo.set_thumbnail(url=user.avatar_url)
         userinfo.add_field(name="ID", value=user.id)
-        userinfo.add_field(name="Status", value=user.status)
         userinfo.add_field(name="Created at", value=user.created_at)
         userinfo.add_field(name="Joined at", value=user.joined_at)
         userinfo.add_field(name="Roles", value=len(user.roles))
-        userinfo.add_field(name="Bot", value=user.bot)
         await message.channel.send(embed=userinfo)
     if message.content.startswith("!guildinfo"):
         guild = message.guild
