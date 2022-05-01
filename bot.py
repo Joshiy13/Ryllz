@@ -61,7 +61,7 @@ async def on_message(message):
             user = message.mentions[0]
             await user.ban()
             await message.channel.send(f"Banned {user.mention}")
-    if message.content.startswuth("!unban"):
+    if message.content.startswith("!unban"):
         if message.author.guild_permissions.ban_members:
             user = message.mentions[0]
             await user.unban()
