@@ -50,7 +50,7 @@ async def on_message(message):
     if message.content.startswith("!say"):
         await message.channel.send(message.content[5:])
     if message.content.startswith("!telldev"):
-        await message.channel.send(f"<@{dev}>")
+        await message.channel.send(f"<@{dev}>" + " " + message.content[9:])
     if message.content.startswith("!code"):
         await message.channel.send(embed=code)
 
