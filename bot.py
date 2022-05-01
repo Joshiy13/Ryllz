@@ -62,13 +62,31 @@ async def on_message(message):
             await user.ban()
             ban = discord.Embed(title="", description=f"Banned {user.mention}!", color=800080)
             await message.channel.send(embed=ban)  
-
     if message.content.startswith("!kick"):
         if message.author.guild_permissions.kick_members:
             user = message.mentions[0]
             await user.kick()
             kick = discord.Embed(title="", description=f"Kicked {user.mention}!", color=800080)
             await message.channel.send(embed=kick)
+    if message.content.startswith("!userinfo"):
+        user = message.mentions[0]
+        userinfo = discord.Embed(title="", description=f"{user.name}#{user.discriminator}", color=800080)
+        userinfo.set_thumbnail(url=user.avatar_url)
+        userinfo.add_field(name="ID", value=user.id)
+        userinfo.add_field(name="Status", value=user.status)
+        userinfo.add_field(name="Created at", value=user.created_at)
+        userinfo.add_field(name="Joined at", value=user.joined_at)
+        userinfo.add_field(name="Roles", value=len(user.roles))
+        userinfo.add_field(name="Bot", value=user.bot)
+        await message.channel.send(embed=userinfo)
+    if message.content.startswith("!guildinfo"):
+        guild = message.guild
+        guildinfo = discord.Embed(title="Name", description=f"{guild.name}", color=800080)
+        guildinfo.set_thumbnail(url=guild.icon_url)
+        guildinfo.add_field(name="ID", value=guild.id)
+        guildinfo.add_field(name="Created at", value=guild.created_at)
+        guildinfo.add_field(name="Members", value=guild.member_count)
+        await message.channel.send(embed=guildinfo)
 
 
 client.run(token)
