@@ -60,17 +60,15 @@ async def on_message(message):
         if message.author.guild_permissions.ban_members:
             user = message.mentions[0]
             await user.ban()
-            await message.channel.send(f"Banned {user.mention}")
-    if message.content.startswith("!unban"):
-        if message.author.guild_permissions.ban_members:
-            user = message.mentions[0]
-            await user.unban()
-            await message.channel.send(f"Unbanned {user.mention}")
+            ban = discord.Embed(title="", description=f"Banned {user.mention}!", color=800080)
+            await message.channel.send(embed=ban)  
+
     if message.content.startswith("!kick"):
         if message.author.guild_permissions.kick_members:
             user = message.mentions[0]
             await user.kick()
-            await message.channel.send(f"Kicked {user.mention}")
+            kick = discord.Embed(title="", description=f"Kicked {user.mention}!", color=800080)
+            await message.channel.send(embed=kick)
 
 
 client.run(token)
