@@ -10,7 +10,7 @@ import os
 token = os.getenv("TOKEN")
 client = discord.Client()
 
-help = discord.Embed(title="Help-List of Ryllz-Bot", description="Here is a list of commands", color=800080)
+help = discord.Embed(title="Help-List of Ryllz-Bot", description="", color=800080)
 help.add_field(name="!help", value="Shows this page", inline=True)
 help.add_field(name="!dev", value="Shows the Developer of this Bot", inline=True)
 help.add_field(name="!ping", value="Shows the Latency of this Bot", inline=True)
