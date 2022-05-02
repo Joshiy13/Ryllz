@@ -46,6 +46,8 @@ async def on_member_remove(member):
     await channel.send(f"{member.mention} is not willing to give a HOYEAHHHHH... Fuck you!")
 
 
+
+
 @client.event
 async def on_message(message):
     if message.author.bot:
@@ -89,7 +91,10 @@ async def on_message(message):
         guildinfo.add_field(name="Created at", value=guild.created_at)
         guildinfo.add_field(name="Members", value=guild.member_count)
         await message.channel.send(embed=guildinfo)
-    
+    if "Ryllz" in message.content:
+        await message.channel.send("HOYEAHHHHH")
+    if "Hypixel" in message.content:
+        await message.channel.send("oeeeeeerrghggggg")
 
 
 
