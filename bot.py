@@ -43,7 +43,7 @@ async def on_member_join(member):
     await channel.send(f"Welcome {member.mention}! CAN I GET A HOYEAHHHH?!")
 async def on_member_remove(member):
     channel = client.get_channel(737008700230108416)
-    await channel.send(f"{member.mention} is not willing to give a HOYEAHHHHH... Fuck you!")
+    await channel.send(f"{member.mention} is not willing to give us a HOYEAHHHHH... Fuck you!")
 
 
 
