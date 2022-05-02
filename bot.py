@@ -47,7 +47,6 @@ async def on_member_remove(member):
 
 
 
-
 @client.event
 async def on_message(message):
     if message.author.bot:
