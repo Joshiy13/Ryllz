@@ -42,6 +42,9 @@ async def status_task():
 async def on_member_join(member):
     channel = client.get_channel(737008700230108416)
     await channel.send(f"Welcome {member.mention}! CAN I GET A HOYEAHHHH?!")
+async def on_member_remove(member):
+    channel = client.get_channel(737008700230108416)
+    await channel.send(f"{member.mention} is not willing to give a HOYEAHHHHH... Fuck you!")
 
 
 @client.event
@@ -88,7 +91,7 @@ async def on_message(message):
         guildinfo.add_field(name="Members", value=guild.member_count)
         await message.channel.send(embed=guildinfo)
     
-    
+
 
 
 
