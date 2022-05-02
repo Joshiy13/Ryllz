@@ -21,8 +21,7 @@ help.add_field(name="!ban", value="Bans a User", inline=True)
 help.add_field(name="!kick", value="Kicks a User", inline=True)
 help.add_field(name="!userinfo", value="Shows infos about a user", inline=True)
 help.add_field(name="!serverinfo", value="Shows infos about the Server", inline=True)
-help.add_field(name="!mute", value="Mutes a user", inline=True)
-help.add_field(name="!unmute", value="Unmutes a user", inline=True)
+
 
 
 code = discord.Embed(title="Source Code:", description="https://github.com/Joshiy13/Ryllz", color=800080)
