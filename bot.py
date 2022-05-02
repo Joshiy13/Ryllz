@@ -39,7 +39,9 @@ async def status_task():
         await asyncio.sleep(10)
         await client.change_presence(activity=discord.Game("https://discord.gg/PPjDtEYRnn"), status=discord.Status.online)
         await asyncio.sleep(10)
-
+async def on_member_join(member):
+    channel = client.get_channel(737008700230108416)
+    await channel.send(f"Welcome {member.mention}! CAN I GET A HOYEAHHHH?!")
 
 
 @client.event
@@ -86,7 +88,7 @@ async def on_message(message):
         guildinfo.add_field(name="Members", value=guild.member_count)
         await message.channel.send(embed=guildinfo)
     
-
+    
 
 
 
