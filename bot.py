@@ -1,5 +1,4 @@
 from tokenize import Token
-from turtle import color
 from unicodedata import name
 import discord
 from discord import guild, embeds, errors, utils
