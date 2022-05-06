@@ -55,6 +55,7 @@ async def on_message(message):
     if message.content.startswith("!ping"):
         await message.channel.send(f"Pong! ({round(client.latency * 1000)}ms)")
     if message.content.startswith("!say"):
+        await message.delete()
         await message.channel.send(message.content[5:])
     if message.content.startswith("!telldev"):
         await message.channel.send(f"<@{dev}>" + " " + message.content[9:])
