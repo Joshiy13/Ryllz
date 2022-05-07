@@ -98,8 +98,9 @@ async def on_message(message):
     if message.content.startswith("!clear"):
         if message.author.guild_permissions.manage_messages:
             amount = int(message.content[6:])
+            clear = discord.Embed(title="", description=f"Cleared {amount} messages!", color=800080)
             await message.channel.purge(limit=amount)
-            await message.channel.send(f"Cleared {amount} messages!")
+            await message.channel.send(embed=clear)
     
 
 
