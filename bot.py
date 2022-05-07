@@ -18,6 +18,7 @@ help.add_field(name="!code", value="Shows the Source Code to this Bot", inline=T
 help.add_field(name="!telldev", value="Pings the Dev of this Bot", inline=True)
 help.add_field(name="!ban", value="Bans a User", inline=True)
 help.add_field(name="!kick", value="Kicks a User", inline=True)
+help.add_field(name="!clear", value="Clears a Channel", inline=True)
 help.add_field(name="!userinfo", value="Shows infos about a user", inline=True)
 help.add_field(name="!serverinfo", value="Shows infos about the Server", inline=True)
 
