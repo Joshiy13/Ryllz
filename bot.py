@@ -99,7 +99,7 @@ async def on_message(message):
             amount = int(message.content[6:])
             await message.channel.purge(limit=amount)
             await message.channel.send(f"Cleared {amount} messages!")
-
+    
 
 
 
