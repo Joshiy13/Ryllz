@@ -94,6 +94,12 @@ async def on_message(message):
         await message.channel.send("HOYEAHHHHH")
     if "Hypixel" in message.content:
         await message.channel.send("oeeeeeerrghggggg")
+    if message.content.startswith("!clear"):
+        if message.author.guild_permissions.manage_messages:
+            amount = int(message.content[6:])
+            await message.channel.purge(limit=amount)
+            await message.channel.send(f"Cleared {amount} messages!")
+
 
 
 
